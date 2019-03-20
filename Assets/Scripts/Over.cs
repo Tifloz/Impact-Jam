@@ -11,6 +11,10 @@ public class Over : MonoBehaviour
         _gameManager.Score++;
         Debug.Log(_gameManager.Score);
         Destroy(gameObject);
+        if (_gameManager.Score >= 4)
+        {
+            Debug.Log("END SCREEN");
+        }
     }
 
     private void Start()
