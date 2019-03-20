@@ -6,7 +6,7 @@ public class Over : MonoBehaviour
 {
     private GameManager _gameManager;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         _gameManager.Score++;
         Debug.Log(_gameManager.Score);
