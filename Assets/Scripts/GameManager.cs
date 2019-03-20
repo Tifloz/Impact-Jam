@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private int _score;
+    private int _score = 1;
     public int Score
     {
         get => _score;
