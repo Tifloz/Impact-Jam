@@ -5,9 +5,13 @@ using UnityEngine;
 public class Over : MonoBehaviour
 {
     private int objects = 0;
-    private void OnTriggerEnter(Collider other)
+
+    private void OnCollisionEnter(Collision col)
     {
-        objects++;
-        Debug.Log(objects);
+        if (col.gameObject.name == "Object")
+        {
+            objects++;
+            Debug.Log("Collision ! " + objects);
+        }
     }
 }
