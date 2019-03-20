@@ -9,15 +9,21 @@ public class Player : MonoBehaviour
 
     public float speed = 3;
 
+    private Rigidbody _rb;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        _rb = player.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
-        var move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-        player.transform.position += move * speed * Time.deltaTime;
+        var horizontal = Input.GetAxis("Horizontal");
+        var vertical = Input.GetAxis("Vertical");
+
+        var fVelocity = new Vector3(horizontal, vertical, 0) * speed;
+        _rb.velocity = fVelocity;
     }
 }
