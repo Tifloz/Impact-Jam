@@ -10,6 +10,7 @@ public class Over : MonoBehaviour
     {
         _gameManager.Score++;
         Debug.Log(_gameManager.Score);
+        Destroy(gameObject);
     }
 
     private void Start()
