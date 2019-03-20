@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Over : MonoBehaviour
 {
-    private int objects = 0;
-    private void OnTriggerEnter(Collider other)
+    private GameManager _gameManager;
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        objects++;
-        Debug.Log(objects);
+        _gameManager.Score++;
+        Debug.Log(_gameManager.Score);
+    }
+
+    private void Start()
+    {
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 }

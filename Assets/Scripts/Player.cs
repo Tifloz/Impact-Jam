@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move : MonoBehaviour
+public class Player : MonoBehaviour
 {
-    public GameObject Player;
+    public GameObject player;
 
     public float speed = 3;
 
@@ -15,9 +15,9 @@ public class Move : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         var move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-        Player.transform.position += move * speed * Time.deltaTime;
+        player.transform.position += move * speed * Time.deltaTime;
     }
 }
